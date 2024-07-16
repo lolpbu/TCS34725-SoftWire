@@ -47,12 +47,14 @@ void setup(void) {
     Serial.println("Found sensor (soft)");
   } else {
     Serial.println("No TCS34725 found (soft)");
+    while(1);
   }
 
   if(tcs_real.begin(&Wire, TCS34725_ADDRESS)) {
     Serial.println("Found sensor (real)");
   } else {
     Serial.println("No TCS34725 found (real)");
+    while(1);
   }
 
   // Now we're ready to get readings!
